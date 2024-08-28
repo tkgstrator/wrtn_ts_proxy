@@ -17,12 +17,14 @@
 
 - プロジェクトのクローン: `git clone https://github.com/tkgstrator/wrtn_ts_proxy && cd wrtn_ts_proxy`
 - 依存関係のインストール: `bun install`
-- `bun wrangler login`でCloudlflareにログインする
-- `bun wrangler deploy`でワーカーをリリースする
+- Cloudlflareにログインする: `bun wrangler login`
+- ワーカーをリリースする: `bun wrangler deploy`
 
 ## 利用方法
 
 `https://wrtn_proxy.YOURNAME.workers.dev/docs`でOpanAPIで書かれたドキュメントが確認できます.
+
+また[デモ版](https://wrtn_proxy.lemonandchan.workers.dev/docs)を利用することも出来ます.
 
 ### 機能
 
@@ -38,3 +40,27 @@
 - チャット
   - [x] 送信
   - [x] 受信
+
+### モデル
+
+プラットフォームによって利用できるモデルが異なります.
+
+| LLM            | Web | iOS | Android |
+| :------------: | :-: | :-: | :-----: |
+| Search         | ✔  | ✔  | ✔      |
+| GPT-3.5        | -   | ✔  | -       |
+| GPT-4o         | ✔  | ✔  | ✔      |
+| GPT-4v         | -   | ✔  | -       |
+| GPT-4o-mini    | ✔  | ✔  | ✔      |
+| SD3            | ✔  | -   | -       |
+| Claude 3 Haiku | ✔  | -   | -       |
+
+## 今後の展望
+
+- [ ] チャット履歴
+  - [ ] 作成(キャラクター指定)
+  - [ ] 複数削除
+- [ ] キャラクター
+  - [ ] 作成
+- [ ] その他
+  - [ ] ユニットID取得

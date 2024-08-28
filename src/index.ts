@@ -33,5 +33,5 @@ app.route('api/chat', chat)
 
 export default {
   port: 3000,
-  fetch: app.fetch,
+  fetch: app.fetch
 }
