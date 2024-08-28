@@ -1,0 +1,49 @@
+{
+  "name": "wrtn_ts_proxy",
+  "module": "src/index.ts",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "A Cloudflare Worker that proxies requests to OpenAI's GPT-3 API",
+  "license": "MIT",
+  "scripts": {
+    "dev": "wrangler dev --test-scheduled",
+    "lint": "bunx @biomejs/biome lint src",
+    "lint:fix": "bunx @biomejs/biome lint --write src",
+    "format": "bunx @biomejs/biome format src",
+    "format:fix": "bunx @biomejs/biome format --write src",
+    "check": "bunx @biomejs/biome check src",
+    "check:fix": "bunx @biomejs/biome check --write src",
+    "prepare": "husky",
+    "deploy": "bunx wrangler deploy"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@cloudflare/workers-types": "^4.20240718.0",
+    "@commitlint/cli": "19.3.0",
+    "@commitlint/config-conventional": "19.2.2",
+    "@commitlint/cz-commitlint": "19.2.0",
+    "@types/bun": "^1.1.8",
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^22.5.0",
+    "commitlint": "^19.3.0",
+    "husky": "^9.1.1",
+    "wrangler": "3.17.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@hono/zod-openapi": "^0.15.3",
+    "@scalar/hono-api-reference": "^0.5.141",
+    "dayjs": "^1.11.12",
+    "hono": "^4.5.0",
+    "jwt-decode": "^4.0.0",
+    "lodash": "^4.17.21",
+    "openai": "^4.52.7"
+  }
+}

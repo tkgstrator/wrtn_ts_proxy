@@ -1,0 +1,6 @@
+name = "wrtn_proxy"
+main = "src/index.ts"
+compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2024-05-13"
+logpush = true
+send_metrics = true

@@ -1,0 +1,24 @@
+services:
+  wrtn_ts_proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUN_VERSION: 1.1.24
+    volumes:
+      - node_modules_cached:/home/bun/app/node_modules
+      - ../:/home/bun/app:cached
+    tty: true
+    stdin_open: true
+    ports:
+      - 18787:8787
+    networks:
+      - chatgpt_discord
+
+volumes:
+  node_modules_cached:
+
+
+networks:
+  chatgpt_discord:
+    external: true
