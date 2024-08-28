@@ -51,10 +51,10 @@ app.openapi(
           'application/json': {
             schema: z.object({
               email: z.string().email().openapi({
-                description: 'メールアドレス',
+                description: 'メールアドレス'
               }),
               password: z.string().openapi({
-                description: 'パスワード',
+                description: 'パスワード'
               })
             })
           }
@@ -89,7 +89,7 @@ app.openapi(
     request: {
       headers: z.object({
         refresh: z.string().openapi({
-          description: 'リフレッシュトークン',
+          description: 'リフレッシュトークン'
         })
       })
     },
