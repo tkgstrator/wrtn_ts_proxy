@@ -77,6 +77,10 @@ app.openapi(
   }
 )
 
+const description: string = Object.entries(UnitType)
+  .map(([k, v]) => `${k}: \`${v}\``)
+  .join('\n\n')
+
 app.openapi(
   createRoute({
     method: HTTPMethod.POST,
@@ -90,8 +94,12 @@ app.openapi(
         content: {
           'application/json': {
             schema: z.object({
-              type: z.nativeEnum(Type),
-              unit_id: z.nativeEnum(UnitType)
+              type: z.nativeEnum(Type).openapi({
+                description: '現在は`unit`のみ対応しています'
+              }),
+              unit_id: z.nativeEnum(UnitType).openapi({
+                description: description
+              })
             })
           }
         }

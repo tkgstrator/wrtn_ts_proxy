@@ -50,8 +50,12 @@ app.openapi(
         content: {
           'application/json': {
             schema: z.object({
-              email: z.string().email(),
-              password: z.string()
+              email: z.string().email().openapi({
+                description: 'メールアドレス'
+              }),
+              password: z.string().openapi({
+                description: 'パスワード'
+              })
             })
           }
         }
@@ -84,7 +88,9 @@ app.openapi(
     description: 'リフレッシュトークンを使ってアクセストークンを更新します.',
     request: {
       headers: z.object({
-        refresh: z.string()
+        refresh: z.string().openapi({
+          description: 'リフレッシュトークン'
+        })
       })
     },
     responses: {

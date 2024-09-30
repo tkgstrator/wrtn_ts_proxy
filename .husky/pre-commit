@@ -1,5 +1,1 @@
-#!/bin/zsh
-
-bunx @biomejs/biome lint --write src
-bunx @biomejs/biome format --write src
-bunx @biomejs/biome check --write src
+bun lint-staged
